@@ -4,6 +4,8 @@ from .pagination import MyPagination
 from .models import *
 from .serializers import *
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.views import APIView
+from rest_framework.response import Response
 class SocialViewset(ModelViewSet):
     queryset = SocialLinks.objects.all().order_by('-id')[:1]
     serializer_class = SocialLinksSerializer
@@ -20,3 +22,10 @@ class PortfolioViewset(ModelViewSet):
 class InfoViewset(ModelViewSet):
     queryset = Info.objects.all().order_by('-id')[:1]
     serializer_class = InfoSerializer
+class MyVisitors(APIView):
+    def get(self,request):
+        data = Visitors.objects.get(id=1)
+        data.count = data.count+1
+        data.save()
+        mydata = Visitors.objects.get(id=1)
+        return Response({'count':mydata.count})

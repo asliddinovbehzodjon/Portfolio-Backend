@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-@&)4ikl_#)ckq#v+6_tm5tyn+v^*$!i=(wr^ugw_6l-12-4o(d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.pythonanywhere.com']
+ALLOWED_HOSTS = ['.pythonanywhere.com','127.0.0.1']
 
 REST_FRAMEWORK = {
     # 'DEFAULT_PAGINATION_CLASS': 'app.pagination.MyPagination',

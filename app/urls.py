@@ -8,5 +8,6 @@ router.register('portfolio',PortfolioViewset)
 router.register('info',InfoViewset)
 router.register('xabar',XabarViewset)
 urlpatterns = [
-    path('',include(router.urls))
+    path('',include(router.urls)),
+    path('visitors',MyVisitors.as_view())
 ]
